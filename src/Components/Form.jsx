@@ -5,15 +5,14 @@ const Form = () => {
     const [information, setInformation] = useState([])
 
     function handleChange(e){
-        setFormData({...formData,[e.target.name]:e.target.vaue})
+        setFormData({...formData,[e.target.name]:e.target.value})
     }
 
     function handleSubmit(e){
         e.preventDefault();
-        setInformation(formData)
+        setInformation([...information,formData])
         
     }
-    console.log(information)
   return (
     <>
     <div className="grid grid-cols-3 gap-40">
